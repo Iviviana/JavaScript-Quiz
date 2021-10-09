@@ -19,3 +19,11 @@ div {
 .questions {
     display: none;
 }
+
+#correctInput {
+    display: none;
+}
+
+#wrongInput {
+    display: none;
+}

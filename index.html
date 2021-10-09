@@ -9,9 +9,8 @@
 
     <body>
         <div id="timer">
-            
+            Time:0
         </div>
-        <button id="wrongAnswer">Wrong Answer</button>
 
         <div id="start">
             <h1>Coding Quiz Challenge</h1>
@@ -21,22 +20,49 @@
 
         <div id="question1" class="questions">
             <h1>Arrays in JavaScript can be used to store ________.</h1>
-            <ol type="A">
-                <li>Other Arrays</li>
-                <li>Booleans</li>
-                <li>Numbers and Strings</li>
-                <li>All of the Above (correct)</li>
-            </ol>
+            <ul>
+                <li class="answers" ><button class="wrongAnswer">A. Other Arrays</button></li>
+                <li class="answers" ><button class="wrongAnswer">B. Booleans</button></li>
+                <li class="answers" ><button class="wrongAnswer">C. Numbers and Strings</button></li>
+                <li class="answers" ><button class="correctAnswer">D. All of the Above</button></li>
+            </ul>
         </div>
 
-        <div id="question1" class="questions">
+        <div id="question2" class="questions">
             <h1>Commonly used datatypes do NOT include:</h1>
-            <ol type="A">
-                <li>Strings</li>
-                <li>Booleans (correct)</li>
-                <li>Alerts</li>
-                <li>Numbers</li>
-            </ol>
+            <ul>
+                <li class="answers" ><button class="wrongAnswer">A. Strings</button></li>
+                <li class="answers" ><button class="wrongAnswer">B. Booleans</button></li>
+                <li class="answers" ><button class="correctAnswer">C. Alert</button></li>
+                <li class="answers" ><button class="wrongAnswer">D. Numbers</button></li>
+            </ul>
+        </div>
+
+        <div id="question3" class="questions">
+            <h1>An array's length can be evaluated with what property?</h1>
+            <ul>
+                <li class="answers" ><button class="correctAnswer">A. .length</button></li>
+                <li class="answers" ><button class="wrongAnswer">B. .loop</button></li>
+                <li class="answers" ><button class="wrongAnswer">C. console.log</button></li>
+                <li class="answers" ><button class="wrongAnswer">.D. join</button></li>
+            </ul>
+        </div>
+
+        <div id="question4" class="questions">
+            <h1>The condition in an if/else statement must be enclosed by:</h1>
+            <ul>
+                <li class="answers" ><button class="wrongAnswer">A. Curly Brackets</button></li>
+                <li class="answers" ><button class="correctAnswer">B. Parenthesis</button></li>
+                <li class="answers" ><button class="wrongAnswer">C. Quotes</button></li>
+                <li class="answers" ><button class="wrongAnswer">.D. Square Brackets</button></li>
+            </ul>
+        </div>
+
+        <div id="correctInput">
+            <p><i>Correct!</i></p>
+        </div>
+        <div id="wrongInput">
+            <p><i>Wrong!</i></p>
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
