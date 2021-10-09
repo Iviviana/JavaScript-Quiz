@@ -9,12 +9,12 @@
 
     <body>
         <div id="timer">
-            Time:0
+            Time: 60
         </div>
 
         <div id="start">
             <h1>Coding Quiz Challenge</h1>
-            <p>Try to answer the following quiz as best as you can within the time limit. Keep in mind that wrong answers will deduct time and points from your score.</p>
+            <p id="intro">Try to answer the following quiz as best as you can within the time limit. <br>Keep in mind that wrong answers will deduct time and points from your score. <br>You'll have 60 seconds to complete the quiz. <br>Good Luck!</p>
             <button id="startButton">Start the Quiz</button>
         </div>
 
@@ -56,6 +56,18 @@
                 <li class="answers" ><button class="wrongAnswer">C. Quotes</button></li>
                 <li class="answers" ><button class="wrongAnswer">.D. Square Brackets</button></li>
             </ul>
+        </div>
+
+        <div id="finished">
+            <h1>All Done!</h1>
+            <p>Your final score was:</p>
+            <label for="initials">Enter your initals:</label>
+            <input type="text" placeholder="Type your initials here" name="initials" id="initials" />
+            <button type="submit">Submit!</button>
+        </div>
+
+        <div id="high">
+            <h1>High Scores:</h1>
         </div>
 
         <div id="correctInput">

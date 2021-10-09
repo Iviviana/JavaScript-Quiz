@@ -16,6 +16,10 @@ div {
     align-items: center;
 }
 
+#intro {
+    text-align: center;
+}
+
 .questions {
     display: none;
 }
@@ -25,5 +29,13 @@ div {
 }
 
 #wrongInput {
+    display: none;
+}
+
+#finished {
+    display: none;
+}
+
+#high {
     display: none;
 }

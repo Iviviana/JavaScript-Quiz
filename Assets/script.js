@@ -6,7 +6,7 @@ $(document).ready(function() {
     var timer;
     var timeLeft=0;
     function startTimer() {
-        timeLeft=100;
+        timeLeft=60;
         timer=setInterval(function(){
             timeLeft--;
             if(timeLeft===0) {
@@ -18,7 +18,7 @@ $(document).ready(function() {
     //function to call when the timer is finished
     function finish() {
         clearInterval(timer);
-        alert("Game Over!");
+        alert("Out of Time!");
     }
     //function that subtracts time from the timer
     function subtractTimer(){
@@ -51,7 +51,7 @@ $(document).ready(function() {
         $("#question1").show();
         startTimer();
     }
-    //Function for hiding the first question when answered and displaying the second question
+    //Functions for hiding the previous question when answered and displaying the proceeding question
     function answerQuestion1() {
         $("#question1").hide();
         $("#question2").show();
@@ -60,12 +60,23 @@ $(document).ready(function() {
         $("#question2").hide();
         $("#question3").show();
     }
+    function answerQuestion3() {
+        $("#question3").hide();
+        $("#question4").show();
+    }
+    function answerQuestion4() {
+        $("#question4").hide();
+        $("#finished").show();
+        clearInterval(timer);
+    }
     $(".wrongAnswer").click(subtractTimer);
     $(".wrongAnswer").click(clickedWrong);
     $(".correctAnswer").click(addTimer);
     $(".correctAnswer").click(clickedCorrect);
     $("#question1 .answers").click(answerQuestion1);
     $("#question2 .answers").click(answerQuestion2);
+    $("#question3 .answers").click(answerQuestion3);
+    $("#question4 .answers").click(answerQuestion4);
     $("#start").click(startQuiz);
     
 });
