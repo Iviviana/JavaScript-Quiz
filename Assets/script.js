@@ -35,6 +35,7 @@ $(document).ready(function() {
             finish();
         }
     }
+
     function clickedCorrect() {
         $("#correctInput").show();
         $("#wrongInput").hide();
@@ -69,15 +70,27 @@ $(document).ready(function() {
         $("#finished").show();
         clearInterval(timer);
     }
+
+    function highScoresPage() {
+        $("#finished").hide();
+        $("#scores").show();
+    }
+
+
     $(".wrongAnswer").click(subtractTimer);
     $(".wrongAnswer").click(clickedWrong);
     $(".correctAnswer").click(addTimer);
     $(".correctAnswer").click(clickedCorrect);
+    // $(".correctAnswer").click(addScore);
+    // $(".wrongAnswer").click(minusScore);
     $("#question1 .answers").click(answerQuestion1);
     $("#question2 .answers").click(answerQuestion2);
     $("#question3 .answers").click(answerQuestion3);
     $("#question4 .answers").click(answerQuestion4);
-    $("#start").click(startQuiz);
+    $("#submitBtn").click(highScoresPage);
+    $("#startButton").click(startQuiz);
     
+
+    localStorage.setItem("highscores",[{"score":"","initials":""}]);
 });
 

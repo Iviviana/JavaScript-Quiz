@@ -8,9 +8,11 @@
     </head>
 
     <body>
-        <div id="timer">
+        
+        <span id="timer">
             Time: 60
-        </div>
+        </span>
+        <input type="button" id="viewScores" value="View Scores">
 
         <div id="start">
             <h1>Coding Quiz Challenge</h1>
@@ -60,15 +62,19 @@
 
         <div id="finished">
             <h1>All Done!</h1>
-            <p>Your final score was:</p>
+            <p>Your final score was:</p><span id="finalScore"></span>
             <label for="initials">Enter your initals:</label>
             <input type="text" placeholder="Type your initials here" name="initials" id="initials" />
-            <button type="submit">Submit!</button>
+            <button type="submit" id="submitBtn">Submit!</button>
         </div>
 
-        <div id="high">
+        <div id="scores">
             <h1>High Scores:</h1>
+
+            <button type="button" id="clearScoresBtn">Clear Scores</button> <button type="button" id="goBack">Go Back</button>
         </div>
+
+        <form id="results"></form>
 
         <div id="correctInput">
             <p><i>Correct!</i></p>
