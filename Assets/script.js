@@ -85,7 +85,7 @@ $(document).ready(function() {
     }
 
     var initials=[];
-
+    //Saves and displays the initals with the final score
     function addInitials(){
         boxvalue=document.getElementById("initials").value;
         initials.push(boxvalue);
@@ -93,10 +93,6 @@ $(document).ready(function() {
         document.getElementById("displayInitals").innerText=initials + " " + "-" + " " + yourScore;
         
     }
-    
-    
-    
-    
     //Displays the highscore page
     function highScoresPage() {
         $("#finished").hide();
@@ -105,14 +101,18 @@ $(document).ready(function() {
         $("#wrongInput").hide();
         
     }
-
+    //reloads to the start
+    function goBack() {
+        window.location.reload();
+    }
+    function clearScores() {
+        window.localStorage.removeItem("highScores");
+    }
 
     $(".wrongAnswer").click(subtractTimer);
     $(".wrongAnswer").click(clickedWrong);
     $(".correctAnswer").click(addTimer);
     $(".correctAnswer").click(clickedCorrect);
-    // $(".correctAnswer").click(addScore);
-    // $(".wrongAnswer").click(minusScore);
     $("#question1 .answers").click(answerQuestion1);
     $("#question2 .answers").click(answerQuestion2);
     $("#question3 .answers").click(answerQuestion3);
@@ -120,9 +120,12 @@ $(document).ready(function() {
     $("#submitBtn").click(highScoresPage);
     $("#startButton").click(startQuiz);
     $("#submitBtn").click(addInitials);
+    $("#goBack").click(goBack);
+    $("clearScoresBtn").click(clearScores);
 
-    //  let highscores=localStorage.get(JSON.parse("highscores"))
-    // localStorage.setItem("highscores",JSON.stringify(yourScore))
+    localStorage.setItem("highscores",JSON.stringify(yourScore));
+    localStorage.setItem("highscores",JSON.stringify(initials));
+    data=json.parse(localStorage.getItem("highscores"));
     
 
     localStorage.setItem("highscores",[yourScore,initials]);
