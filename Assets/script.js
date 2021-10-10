@@ -36,14 +36,26 @@ $(document).ready(function() {
         }
     }
 
+    var yourScore=0;
+
+
+    //Function that will show when the correct answer is clicked and will add points to the score
     function clickedCorrect() {
         $("#correctInput").show();
         $("#wrongInput").hide();
+        if (clickedCorrect) {
+            yourScore +=10;
+        };
     }
-
+    //Function that will show when the wrong answer is clicked and will deduct points from the score
     function clickedWrong() {
         $("#correctInput").hide();
         $("#wrongInput").show();
+        if (clickedWrong) {
+            yourScore -=5;
+        }; if (yourScore < 0) {
+            yourScore=0;
+        }
     }
     
     //Function that will commence the quiz, start the timmer, hide the start quiz, and display the first question
@@ -69,11 +81,29 @@ $(document).ready(function() {
         $("#question4").hide();
         $("#finished").show();
         clearInterval(timer);
+        document.getElementById("finalScore").innerText=yourScore;
     }
 
+    var initials=[];
+
+    function addInitials(){
+        boxvalue=document.getElementById("initials").value;
+        initials.push(boxvalue);
+        console.log(initials); 
+        document.getElementById("displayInitals").innerText=initials + " " + "-" + " " + yourScore;
+        
+    }
+    
+    
+    
+    
+    //Displays the highscore page
     function highScoresPage() {
         $("#finished").hide();
         $("#scores").show();
+        $("#correctInput").hide();
+        $("#wrongInput").hide();
+        
     }
 
 
@@ -89,8 +119,12 @@ $(document).ready(function() {
     $("#question4 .answers").click(answerQuestion4);
     $("#submitBtn").click(highScoresPage);
     $("#startButton").click(startQuiz);
+    $("#submitBtn").click(addInitials);
+
+    //  let highscores=localStorage.get(JSON.parse("highscores"))
+    // localStorage.setItem("highscores",JSON.stringify(yourScore))
     
 
-    localStorage.setItem("highscores",[{"score":"","initials":""}]);
+    localStorage.setItem("highscores",[yourScore,initials]);
 });
 
