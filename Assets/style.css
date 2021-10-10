@@ -39,13 +39,6 @@ ul {
     font-size: 20px;
 }
 
-#viewScores {
-    display: flex;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-}
-
 #intro {
     text-align: center;
 }

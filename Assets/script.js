@@ -91,6 +91,8 @@ $(document).ready(function() {
         initials.push(boxvalue);
         console.log(initials); 
         document.getElementById("displayInitals").innerText=initials + " " + "-" + " " + yourScore;
+        data=JSON.parse(localStorage.getItem("highscores"))
+        localStorage.setItem("highscores",JSON.stringify(initials + " " + yourScore))
         
     }
     //Displays the highscore page
@@ -99,8 +101,10 @@ $(document).ready(function() {
         $("#scores").show();
         $("#correctInput").hide();
         $("#wrongInput").hide();
+
         
     }
+
     //reloads to the start
     function goBack() {
         window.location.reload();
@@ -121,13 +125,8 @@ $(document).ready(function() {
     $("#startButton").click(startQuiz);
     $("#submitBtn").click(addInitials);
     $("#goBack").click(goBack);
-    $("clearScoresBtn").click(clearScores);
+    $("clearScoresBtn").click(clearScores)
 
-    localStorage.setItem("highscores",JSON.stringify(yourScore));
-    localStorage.setItem("highscores",JSON.stringify(initials));
-    data=json.parse(localStorage.getItem("highscores"));
-    
-
-    localStorage.setItem("highscores",[yourScore,initials]);
+   
 });
 
