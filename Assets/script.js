@@ -19,6 +19,7 @@ $(document).ready(function() {
     function finish() {
         clearInterval(timer);
         alert("Out of Time!");
+        window.location.reload();
     }
     //function that subtracts time from the timer
     function subtractTimer(){
